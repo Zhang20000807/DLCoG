@@ -1,4 +1,4 @@
-# DLCoG: Dual-Level Code Comment Generation based on In-Context Learning
+# DLCoG: Dual-Level Code Comment Generation
 
 ## Abstract
 
