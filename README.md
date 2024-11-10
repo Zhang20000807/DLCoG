@@ -20,18 +20,18 @@ The format of the dual-level code comment data is as follows:
 {
 	id:0
 	repo:"repo_owner/repo_name"
-  path:"root/docA/.../file.java"
-  raw_code:"public int fun_name(int arg){...}"
-  code_summary:"This function make ..."
-  code_snippets:[
-  	{
+	path:"root/docA/.../file.java"
+	raw_code:"public int fun_name(int arg){...}"
+	code_summary:"This function make ..."
+	code_snippets:[
+		{
   		sub_id:0
   		code_snippet:"int[] sublist = ..."
   		code_summary:"make a sublist ..."
   		place:(7,9) # Located on lines 7 to 9 of the source code
 		},
 		...
-  ]
+	]
 }
 ```
 
