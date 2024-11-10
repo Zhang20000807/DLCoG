@@ -16,7 +16,7 @@ The dataset and eval results are too large to upload to GitHub. You can find the
 
 The format of the dual-level code comment data is as follows:
 
-```
+```json
 {
 	id:0
 	repo:"repo_owner/repo_name"
