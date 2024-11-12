@@ -15,7 +15,7 @@ def ask_gpt(messages):
     except Exception as e:
         return ask_gpt(messages)
 
-pre_prompt = "You are a Java programmer, please generate code snippet comments for the <code snippet> in the code based on the example, and generate a method comment describing the function of the entire code:\n"
+pre_prompt = "You are a Java programmer. Please follow the example to generate inline comments step by step according to the identifiers and specific scopes in the code, and summarize each inline comment to generate a method comment that describes the function of the entire code:\n"
 
 def process_data_with_gpt(data, in_context_num, raw_code_type):
     p = pre_prompt
@@ -47,14 +47,14 @@ def process_data_with_gpt(data, in_context_num, raw_code_type):
         tag = f"{tag_base}{number}>"
         pattern = rf"{re.escape(tag)}:\{{(.*?)\}}"
         match = re.search(pattern, response, re.DOTALL)
-        temp = {}
+        res_snippet = {}
         if not match:
-            temp["gpt_res"] = "ERROR"
-            temp["ground_truth"] = data["test"]["code_snippets"][i - 1]["code_summary"]
+            res_snippet["gpt_res"] = "ERROR"
+            res_snippet["ground_truth"] = data["test"]["code_snippets"][i - 1]["code_summary"]
         else:
-            temp["gpt_res"] = match.group(1).strip()
-            temp["ground_truth"] = data["test"]["code_snippets"][i - 1]["code_summary"]
-        res["result"]["snippet"].append(temp)
+            res_snippet["gpt_res"] = match.group(1).strip()
+            res_snippet["ground_truth"] = data["test"]["code_snippets"][i - 1]["code_summary"]
+        res["result"]["snippet"].append(res_snippet)
 
     pattern = r'<method comment>:\{(.*?)\}'
     match = re.search(pattern, response, re.DOTALL)
