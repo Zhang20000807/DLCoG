@@ -6,13 +6,13 @@ Code comments that describe the purpose of the code mainly include method commen
 
 We manually constructed a high-quality 6.9k Java dataset of <Method, Method Comment, \<Snippet, Snippet Comment>*> based on some open-source Java projects(**raw_dataset/manual_dataset.jsonl**). This dataset was used to train a classification model for identifying "code summaries" in comments, as well as an association model for finding the code corresponding to the comments. A total of 80k multi-level code annotation datasets were built in a larger range of open source projects(**raw_dataset/expansion_dataset.jsonl**).
 
-The paper is under review, please do not disseminate it widely.
-
 ## Manual Dataset
 
 The original dataset can be found at https://huggingface.co/datasets/bigcode/the-stack/tree/main/data/java
 
-The dataset and eval results are too large to release to GitHub, 100 examples of manual and expand datasets are available in the **raw_dataset** folder. Based on the double-blind review principle and reproducibility, we will release the complete dataset and more detailed training data to Google Driven upon acceptance.
+The dataset and eval results are too large to release to GitHub, 100 examples of manual and expand datasets are available in the **raw_dataset** folder. 
+
+You can find the complete code and dataset in https://drive.google.com/drive/folders/1Q7v9PkslmcAXynbhlHm_SL1y9Jkf1NaI?usp=sharing
 
 The format of the dual-level code comment data is as follows:
 
