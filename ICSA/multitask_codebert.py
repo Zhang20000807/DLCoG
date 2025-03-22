@@ -30,7 +30,7 @@ class CodeCommentDataset(Dataset):
         label1 = self.labels1[idx]
         label2 = self.labels2[idx]
 
-        input_text = f"<CLS> {comment} <SEP> {snippet} <EOS>"
+        input_text = comment + " " + snippet
 
         encoding = self.tokenizer.encode_plus(
             input_text,
